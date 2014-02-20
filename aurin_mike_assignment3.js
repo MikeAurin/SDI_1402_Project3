@@ -13,7 +13,7 @@ var myBoss = "Bernie",
 	brokenBallast = false,
 	lightsOn = false,
 	boxOfBulbs = 12,
-	lightsPerFixture = 4,
+	lightsPerFixture = 2,
 	myTools = ["screwdrivers", "pliers", "flashlights", "hammers"],
 	restaurant,
 	theaterJson,
@@ -116,24 +116,22 @@ if (brokenBallast || lightsOn === false) {
 		brokenBulbs--; 
 		goodBulbs++;
 		}
+	return goodBulbs;
 	}
 			
 };
 var replacedLights = getBulbs(4);
 console.log("Only " + replacedLights + " lights have to be replaced in this fixture.  The other " + replacedLights + " are still good.");
 
-var replaceBulbs = getBulbs(4)
-console.log("We need to replace " + replaceBulbs + " lights in this auditorium.");
-
-neededBulbs = replaceBulbs;
-console.log("A box of lights contain " + boxOfBulbs + " bulbs.  We only need " + replaceBulbs + " of them.");
+neededBulbs = replacedLights;
+console.log("A box of lights contain " + boxOfBulbs + " bulbs.  We only need " + replacedLights + " of them.");
 
 // math for loop
 var work = function() {
-for (var lightsPerFixture = 4; lightsPerFixture > 0; lightsPerFixture--) {
+for (var lightsPerFixture = 2; lightsPerFixture > 0; lightsPerFixture--) {
 	console.log("One light down, " + lightsPerFixture + " to go.  Hand me another one " + newEmployeePrompt + ".");
 	 }
-	var invoice = lightsPerFixture + 4
+	var invoice = lightsPerFixture + 2
 		return invoice;
 };
 		
