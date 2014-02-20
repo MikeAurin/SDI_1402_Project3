@@ -4,6 +4,7 @@
 // The story behind project 3 is a refactoring of week 2's code.  I felt that changing the order of the functions to fit into my own custom flowchart would be a good experience with refactoring to make a story fit a criteria and still remain logical.
 
 // Variables
+
 var myBoss = "Bernie",
 	theTheater = "Regal Cinemas at Sawgrass Mills Mall",
 	newEmployeePrompt,
@@ -20,6 +21,7 @@ var myBoss = "Bernie",
 	
 
 // prompt requirement
+
 newEmployeePrompt = prompt("You are my new employee!  What is your name?"); 
 if (newEmployeePrompt === "Lee") { 
 	console.log("Nice to meet you.  You look like a strong, competent fellow.")
@@ -29,6 +31,7 @@ if (newEmployeePrompt === "Lee") {
 
 console.log("Welcome to " + myCompany + ", " + newEmployeePrompt + "!  You're my new helper, let's get started!");
 
+// JSON
 
 var theaterJson = {
 
@@ -81,24 +84,20 @@ console.log("Now we need our tools for the job");
 
 for (var i = 0; i < myTools.length; i++) {
 	console.log("In our tool bag we have " + myTools);
-
 };
 
 for (var i = 0; i < myTools.length; i++) {
-	
 	if (myTools[i] === "hammers") {
-	
 		console.log("We don't need the " + myTools[i]);
-		
 	} else {
-	
 		console.log("We are going to need the " + myTools[i]);
-	
 	};
-
 };
+myTools[4] = "wire strippers"
+console.log("I almost forgot, we are going to need " + myTools[4] + " as well.");
 
 // confirm
+
 lightLocation = confirm("The light fixture that is out is located in the front of the auditorium, right?");
 if (lightLocation === true) {
 	console.log("Excellent, I'll go get the lift.")
@@ -107,19 +106,22 @@ if (lightLocation === true) {
 };
 
 // boolean while loop
+
 if (brokenBallast || lightsOn === false) {
-	var getBulbs = function(newBulbs) {
+	var getBulbs = function(goodBulbs) {
 		var brokenBulbs = 4,
 			goodBulbs = 0;
-		if (brokenBulbs > goodBulbs) {
-			console.log("The light bulbs are bad.");
-		} else {
-			console.log("The ballast needs to be replaced.");
+		while (brokenBulbs > goodBulbs) { 
+		console.log("There are " + brokenBulbs + " lights left to be removed.");
+		brokenBulbs--; 
+		goodBulbs++;
+		}
 	}
-		return goodBulbs;
-	}
-	
+			
 };
+var replacedLights = getBulbs(4);
+console.log("Only " + replacedLights + " lights have to be replaced in this fixture.  The other " + replacedLights + " are still good.");
+
 var replaceBulbs = getBulbs(4)
 console.log("We need to replace " + replaceBulbs + " lights in this auditorium.");
 
@@ -142,6 +144,7 @@ console.log("Now we'll send an invoice for " + lightsPerFixture + " bulbs.");
 
 
 // string concatenation
+
 getFood = function(){
 	var restaurant = confirm("Do you wanna go to Panda Express for lunch?  Otherwise we're hitting the Mickey D's drive thru on the way home.");
 	if (restaurant === true) {
@@ -155,27 +158,3 @@ var restaurant = getFood()
 console.log("Alright, " + newEmployeePrompt + "...Let's go to " + restaurant + ".");
 
 console.log("Thanks for your hard work today " + newEmployeePrompt + "!  You learned how to change " + lightsPerFixture + " and we got some delicious " + restaurant + ".");
-
-
-
-
-//Requirements:
-/*
-// Loops 
-For your project you'll need to loop over an array and perform some kind of math or other logical function on the items in the array. 
-For example, you could sum the values in the array, find an average or the minimum or maximum, count the occurences of a specific item, or all of the numbers greater or less than the item. 
-Thus, you need to demonstrate that you can:
-	Loop over arrays
-	Find the number of items in an array
-	Work with array indexes
- Get data into and out of arrays
-
-// JSON
-Since JSON is a subset of JavaScript literal values, even a single variable of any type is technically JSON. 
-However, for the purpose of this project, the JSON requirement is as follows:
-	The top level (outermost) data type must be an object or array.
-	There must be at least two levels of additional types beneath the top level type, for a total of at least 3 levels of data. That is, you may have an object that has an array of objects, or an object with an array of arrays, or an array with objects within objects, etc.
-	At the innermost level you will have the primitive data types: strings, numbers, and booleans.
-For example, I might have a pirate object, with a ships array property, where each item was an object with properties such as shipName, cargoSpace, etc. There are three levels (pirate→ships→ship) and primitive data at the lowest level.
-The intent here is to get you used to working with complex, nested data.
-*/
