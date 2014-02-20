@@ -13,8 +13,11 @@ var myBoss = "Bernie",
 	lightsOn = false,
 	boxOfBulbs = 12,
 	lightsPerFixture = 4,
+	myTools = ["screwdrivers", "pliers", "flashlights", "hammers"],
 	restaurant,
 	theaterJson,
+	getLocation,
+	
 
 // prompt requirement
 newEmployeePrompt = prompt("You are my new employee!  What is your name?"); 
@@ -49,17 +52,51 @@ var theaterJson = {
 	
 };
 
-var getLocation = function(theaterJson) {
-	if (theaterJson.workNeeded === true) {
-		console.log ("We are working at " + theaterJson.theaterName + " today.");
-			} else {
-		console.log("We aren't needed at " + theaterJson.theaterName + " right now.");
+
+var JSON = function() {
+
+	for (var key in theaterJson.theaters) {
+	
+		for (var newKey in theaterJson.theaters[key]) {
+		
+			if (theaterJson.theaters[key][newKey] === "Sawgrass Mills") {
+			
+				console.log("We have a service call at " + theaterJson.theaters[key][newKey] + ".");
+			}
+		
+		}
+		
 	};
+
+
 };
 
-console.log(theaterJson);
+JSON();
 
 console.log("Today " + myBoss + " wants us to examine and repair a light fixture at " + theTheater + ".");
+
+// array
+
+console.log("Now we need our tools for the job");
+
+for (var i = 0; i < myTools.length; i++) {
+	console.log("In our tool bag we have " + myTools);
+
+};
+
+for (var i = 0; i < myTools.length; i++) {
+	
+	if (myTools[i] === "hammers") {
+	
+		console.log("We don't need the " + myTools[i]);
+		
+	} else {
+	
+		console.log("We are going to need the " + myTools[i]);
+	
+	};
+
+};
 
 // confirm
 lightLocation = confirm("The light fixture that is out is located in the front of the auditorium, right?");
@@ -102,6 +139,7 @@ var doWork = work();
 console.log("Thanks " + newEmployeePrompt + ".  We changed " + doWork + " lights.");
 
 console.log("Now we'll send an invoice for " + lightsPerFixture + " bulbs.");
+
 
 // string concatenation
 getFood = function(){
