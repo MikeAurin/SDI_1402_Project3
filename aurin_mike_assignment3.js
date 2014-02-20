@@ -25,6 +25,40 @@ if (newEmployeePrompt === "Lee") {
 };
 
 console.log("Welcome to " + myCompany + ", " + newEmployeePrompt + "!  You're my new helper, let's get started!");
+
+
+var theaterJson = {
+
+	"theaters": [
+		{
+			"theaterName": "Kendall Village",
+			"workNeeded": false,
+			"numberOfWorkers": 4
+		},
+		{
+			"theaterName": "Cinemark Palace",
+			"workNeeded": false,
+			"numberOfWorkers": 3
+		},
+		{
+			"theaterName": "Sawgrass Mills",
+			"workNeeded": true,
+			"numberOfWorkers": 2
+		}
+	]
+	
+};
+
+var getLocation = function(theaterJson) {
+	if (theaterJson.workNeeded === true) {
+		console.log ("We are working at " + theaterJson.theaterName + " today.");
+			} else {
+		console.log("We aren't needed at " + theaterJson.theaterName + " right now.");
+	};
+};
+
+console.log(theaterJson);
+
 console.log("Today " + myBoss + " wants us to examine and repair a light fixture at " + theTheater + ".");
 
 // confirm
